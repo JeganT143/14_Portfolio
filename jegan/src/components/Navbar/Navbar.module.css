@@ -1,0 +1,86 @@
+@import "../../var.css";
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background: linear-gradient(90deg, var(--color-dark) 0%, var(--color-bg) 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.title:hover {
+  color: var(--color-secondary);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menuBtn {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menuItems {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menuItems li a {
+  font-size: 18px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menuItems li a:hover {
+  color: var(--color-primary);
+}
+
+.menuItems li a.active {
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 830px) {
+  .menuBtn {
+    display: block;
+  }
+
+  .menuItems {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    flex-direction: column;
+    gap: 15px;
+    background: linear-gradient(
+      180deg,
+      rgba(33, 154, 73, 0.841),
+      rgb(25, 100, 25) 100%
+    );
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .menuOpen {
+    display: flex;
+  }
+}
